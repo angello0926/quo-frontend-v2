@@ -17,6 +17,7 @@ output: {
     publicPath: '/',
     filename: 'bundle.js'
 },
+
 devServer: {
     contentBase: path.resolve(__dirname, 'src') //'./src'
 },
@@ -28,8 +29,13 @@ module: {
     loaders: [
     {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']}, //use babel to transpile the js
     {test: /(\.css)$/, loaders: ['style', 'css']},
+    {test: /(\.scss)$/, loaders: ['style', 'css','sass']},
     {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
     {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
+    {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file?hash=sha512&digest=hex&name=[hash].[ext]'
+    }, 
     {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
     {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
     ]
