@@ -1,20 +1,59 @@
 @import './util/_colors.scss';
 @import './util/_typography.scss';
 @import './util/_buttons.scss';
-
+@import './util/_font.scss';
 
 #app{
-    background: $theme-color;
+    background: white;
+    font-family: $quo-font;
 }
+
+
 .container{
-    width: 70vw;
+    width: 70vw !important;
     margin: 0 auto;
 }
+
+.jumbotron{
+    background: transparent;
+}
+
+a{
+    color: $theme-color;
+    &:hover{
+        text-decoration: none;
+        color: $theme-color;
+    }
+}
 .nav{
+    background: white;
     padding: 8px;
-    text-align: center;
     border-bottom: 1px solid $color-light-grey;
+    height: 70px;
+    margin: 0 auto;
+    padding: 10px;
+    .content{
+        padding: 10px;
+        width: 70vw;
+        height: 100%;
+        margin: 0 auto;
+        img{
+            margin-left: 50px;
+            height: 100%;
+        }  
+    }
+    ul{
+        display: inline-block;
+        font-family: $quo-font-bold;
+        li{
+            list-style: none;
+            display: inline;
+            margin-right: 20px;
+        }
+    }
     .logo{
-        margin-left:20px;
+        display: inline-block;
+        margin-right: 30px;
+  
     }
 }

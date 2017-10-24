@@ -3,14 +3,26 @@ $font-size-m: 20px;
 $font-size-l: 36px;
 $font-size-xl: 48px;
 
+
+$quo-font: 'Cooper Hewitt Medium', sans-serif;
+$quo-font-light: 'Cooper Hewitt Light', sans-serif;
+$quo-font-bold: 'Cooper Hewitt Bold', sans-serif;
+
 h1{
+    font-family: $quo-font-bold;
     font-size: $font-size-xl;
 }
 
 h2{
+    font-family: $quo-font;
     font-size: $font-size-l;
 }
 
-p{
+p{  
+    font-family: $quo-font;
     font-size: $font-size-m;
+}
+
+.small-title{
+    font-family: $quo-font-light;
 }
