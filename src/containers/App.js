@@ -1,11 +1,7 @@
 import React from 'react';
 import {renderRoutes} from '../routes';
 const AppContainer = () => (
-    <div className="container">
-        {renderRoutes()}
-    </div>
-
-
+    renderRoutes()
 );
 
 export default AppContainer;
