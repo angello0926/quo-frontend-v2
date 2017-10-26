@@ -27,7 +27,7 @@ plugins: [
 ],
 module: {
     loaders: [
-    {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']}, //use babel to transpile the js
+    {test: /\.jsx?/, include: path.join(__dirname, 'src'), loaders: ['babel']}, //use babel to transpile the js
     {test: /(\.css)$/, loaders: ['style', 'css']},
     {test: /(\.scss)$/, loaders: ['style', 'css','sass']},
     {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
