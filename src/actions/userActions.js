@@ -6,10 +6,15 @@ const api_endpoint = CONFIGURATION.api_endpoint;
 
 
 export function registerAccount(registerFormData){
+    console.log(registerFormData,api_endpoint);
     return function (dispatch){
-        axios.post(api_endpoint+'/signup', {
-            email: 'angelyukyu+23@gmail.com',
-            password: 'fakepassword'
+        axios({
+            method: 'post',
+            url: api_endpoint+'auth/signup',
+            data: registerFormData,
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
         })
         .then(function (response) {
             dispatch({type: REGISTER_FULFILLED, payload: response.data });
@@ -17,5 +22,5 @@ export function registerAccount(registerFormData){
         .catch(function (error) {
             dispatch({type: REGISTER_REJECTED, payload: error });
         });
-    }
+    };
 }

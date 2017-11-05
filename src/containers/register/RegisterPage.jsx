@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { registerAccount } from '../../actions/userActions';
@@ -7,35 +8,21 @@ import SignUpForm from '../../components/SignUpForm.jsx';
 class RegisterPage extends React.Component{
     
     render(dispatch){
+        const { registerAccount } = this.props;
         return (
             <div className = "jumbotron">
                 <h1> Be a member in Quo community </h1>
                 <p className="small-title">Sign up Quo to create your favourite quotes picture and share them to the world</p>
-                <SignUpForm />
+                <SignUpForm  userSignUpRequest =  {registerAccount} />
             </div>
         );
     }
 }
 
-
-// const mapStateToProps = (state) =>{
-//     console.log(state);
-//     return{
-//         user: state
-//     };
-// };
+RegisterPage.propTypes = {
+    registerAccount: PropTypes.func.isRequired
+};
 
 
-// const mapDispatchToProps = (dispatch) =>{
-//     return {
-//         setName: (user) =>{
-//             dispatch({
-//                 type: "REGISTER"
-//             })
-//         }
-//     }
-// }
 
-// RegisterPage = connect()(RegisterPage)
-
-export default RegisterPage;
+export default connect((state) => { return {};}, { registerAccount })(RegisterPage);

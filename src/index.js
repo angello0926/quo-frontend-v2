@@ -12,9 +12,7 @@ import promise from 'redux-promise-middleware';
 import reducer from './reducers';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
-const middleware = applyMiddleware(promise(), thunk ,createLogger());
-const persistedState = loadState();
-const store = createStore(reducer, middleware, persistedState);
+let store = createStore(reducer, loadState(), applyMiddleware(promise(), thunk ,createLogger()));
 
 console.log(store.getState());
 store.subscribe(()=>{

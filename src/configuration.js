@@ -1,4 +1,4 @@
 export default {
     production: true,
-    api_endpoint: "http://localhost:5000/api/"
+    api_endpoint: "http://localhost:4000/api/"
 };
